@@ -8,7 +8,7 @@ The app uses React, Google Maps API, and Foursquare API.
 * [Instructions](#instructions)
 * [Dependecies](#dependecies)
 * [Contributing](#contributing)
-* [Create React App](#CreateReactApp)
+* [Create React App](#Create-React-App)
 
 ## Instructions
 
@@ -18,7 +18,8 @@ Obtain valid API keys:
 - Google Maps API key
 - Foursquare API key
 
-Install all dependencies (see [Dependecies](#dependecies) section:
+Install all dependencies: 
+(see also: [Dependecies](#dependecies) section)
   ```sh
   npm install
   ```
@@ -45,14 +46,14 @@ This is a student project, not meant for public use or contributions.
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
-##CreateReactApp
+## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Create React App Table of Contents
+### Create React App Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
