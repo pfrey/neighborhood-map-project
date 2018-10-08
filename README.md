@@ -10,7 +10,7 @@ The app uses React, Google Maps API, and Foursquare API.
 * [Contributing](#contributing)
 * [Create React App](#CreateReactApp)
 
-## Dependencies
+## Instructions
 
 _To run:_
 
