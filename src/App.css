@@ -30,3 +30,129 @@
     transform: rotate(360deg);
   }
 }
+
+/*--- Custom Styles ---*/
+#map { 
+  height: 100vh; 
+  width: 75%; 
+  float: right; 
+}
+
+#map .infowindow span {
+  font-style: italic;
+  padding-left: 10px;
+}
+
+
+#header {
+  height: 50px;
+  width: 100vw;
+  background: darkgrey;
+  background-image: linear-gradient(#d1d3d6, #77797c);
+  color: #3064b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #164a99;
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+#sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  background: #808080;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: url("images/detroit.jpg"); /* Photo by Catherine Hughes on Unsplash */
+  background-size: cover;
+  background-position: right;
+}
+
+h2 {
+  color: #bc0d53;
+  font-size: 22px;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+}
+
+#search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box {
+  width: 80%;
+}
+
+nav {
+  max-height: calc(100vh - 90px);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+ul.venues {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  overflow: auto;
+  margin: 0 0 15px;
+  padding: 0 10px 10px 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  display: block;
+  position: relative;
+  width: 90%;
+  padding: 15px 5px;
+  margin: 10px 0;
+  font-size: 0.875rem;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  color: #cbcbcb;
+  cursor: pointer;
+  border: 1px solid #303030;
+  background: #606060;
+}
+
+li .name {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+li p {
+  padding: 0 10px;
+  margin: 5px 0;
+}
+
+li:last-child {
+  margin-bottom: 100px;
+}
+  
+li:hover {
+  color: #f44295;
+  background: #303030;
+}
+  
+li:focus{
+  background: none;
+}

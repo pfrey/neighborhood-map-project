@@ -1,35 +1,65 @@
-import React, {Component} from "react";
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
+/* global google */
+import React, { Component } from 'react';
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  InfoWindow
+} from 'react-google-maps';
 
-const MyMapComponent = withScriptjs(
+const LoadMap = withScriptjs(
   withGoogleMap(props => (
-    <GoogleMap 
-      defaultZoom={8} 
-      zoom={props.zoom} 
-      defaultCenter={{ lat: 42.3528795, lng: -83.2392901 }}
-      center={props.center}
+    <GoogleMap
+      defaultZoom={10}
+      zoom={props.zoom}
+      defaultCenter={{ lat: 42.3523699, lng: -83.3793885 }}
+      center={{
+        lat: parseFloat(props.center.lat),
+        lng: parseFloat(props.center.lng)
+      }}
     >
-      {props.markers && 
+      {props.markers &&
         props.markers
           .filter(marker => marker.isVisible)
-          .map((marker, index) => {
-            const venueInfo = props.venues.find(venue => venue.id === marker.id);
+          .map((marker, index, argument) => {
+            const venueInfo = props.venues.find(
+              venue => venue.id === marker.id
+            );
+
             return (
-              <Marker 
-                key = { index } 
-                position = {{ lat: marker.lat, lng: marker.lng }}
-                onClick = { () => props.markerClick(marker) }
+              <Marker
+                key={index}
+                position={{ lat: marker.lat, lng: marker.lng }}
+                onClick={() => props.handleMarkerClick(marker)}
+                animation={
+                  argument.length === 1
+                    ? google.maps.Animation.BOUNCE
+                    : google.maps.Animation.DROP
+                }
               >
                 {marker.isOpen &&
-                  venueInfo.bestPhoto && (
+                  venueInfo.contact && (
                     <InfoWindow>
                       <React.Fragment>
-                        <p>{ venueInfo.name }</p>
-                        <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`} alt="Photo of Venue" />
+                      <div className="infowindow">
+                        <p>
+                          {venueInfo.name}<br/>
+                          <span className="rating">This location is rated {venueInfo.rating} / 10</span>
+                        </p>
+                        <hr />
+                        <p>
+                          Contact Info:<br/>
+                          <span>Phone: </span>{venueInfo.contact.formattedPhone}<br/>
+                          <span>Facebook: </span><a href={`http://www.facebook.com/${venueInfo.contact.facebookUsername}`} target="_blank">{venueInfo.contact.facebookUsername}</a><br/>
+                          <span>Twitter: </span><a href={`http://www.twitter.com/${venueInfo.contact.twitter}`} target="_blank">{venueInfo.contact.facebookUsername}</a>
+                        </p>
+                        <hr />
+                        <p>{venueInfo.hours.status}</p>
+                      </div>
                       </React.Fragment>
                     </InfoWindow>
-                  )
-                }
+                  )}
               </Marker>
             );
           })}
@@ -37,19 +67,16 @@ const MyMapComponent = withScriptjs(
   ))
 );
 
-const mapHeight = window.innerHeight
-
 export default class Map extends Component {
-	render() {
+  render() {
     return (
-      <MyMapComponent
-        { ...this.props }
-        isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBNiVrOQqLRb6SuJgjBRM_bQV2hYAs-hRw"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `${mapHeight}px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+      <LoadMap
+        {...this.props}
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNiVrOQqLRb6SuJgjBRM_bQV2hYAs-hRw"
+        loadingElement={<div style={{ height: `100vh` }} />}
+        containerElement={<div id="map" className="mapContainer" />}
+        mapElement={<div className="mapElement" style={{ height: `100vh` }} />}
       />
     );
-	}
+  }
 }

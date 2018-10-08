@@ -36,9 +36,28 @@ class Helper {
         urlParams
       )}`,
       requestData
-    ).then(res => res.json());
+    )
+      .then(Helper.checkStatus)
+      .then(response => response.json())
+      .catch(error => {
+        alert(
+          'An error occurred fetching Foursquare: ' +
+            error.response
+        );
+      });
+  }
+  // https://medium.com/@yoniweisbrod/interacting-with-apis-using-react-native-fetch-9733f28566bb
+  static checkStatus(response) {
+    if (response.ok) {
+      return response;
+    } else {
+      let error = new Error(response.statusText);
+      error = response;
+      throw error;
+    }
   }
 }
+
 
 export default class FoursquareAPI {
   static search(urlParams) {
