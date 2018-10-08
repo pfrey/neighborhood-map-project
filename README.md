@@ -30,6 +30,7 @@ Run:
   ```
 
 ## Dependencies
+
 - Bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 
 - [React Scripts](https://www.npmjs.com/package/react-scripts)
 - [React](https://reactjs.org)
