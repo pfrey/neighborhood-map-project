@@ -1,9 +1,57 @@
+# Neighborhood Map Project
+
+Seventh and Final Project of the Udacity Front-End NanoDegree Program.
+The goal of this project was to build a single page map application.
+The app uses React, Google Maps API, and Foursquare API.
+
+## Table of Contents
+* [Instructions](#instructions)
+* [Dependecies](#dependecies)
+* [Contributing](#contributing)
+* [Create React App](#CreateReactApp)
+
+##Instructions
+_To run:_
+
+Obtain valid API keys:
+- Google Maps API key
+- Foursquare API key
+
+Install all dependencies (see [Dependecies](#dependecies) section:
+  ```sh
+  npm install
+  ```
+
+Run:
+  ```sh
+  npm start
+  ```
+
+## Dependencies
+- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 
+- [React Scripts](https://www.npmjs.com/package/react-scripts)
+- [React](https://reactjs.org)
+- [React DOM](https://www.npmjs.com/package/react-dom)
+- [React Google Maps](https://www.npmjs.com/package/react-google-maps)
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key)
+- [FourSquare Places API](https://developer.foursquare.com/docs/api/)
+- [Google Font Coda](https://fonts.googleapis.com/css?family=Coda)
+
+
+## Contributing
+
+This is a student project, not meant for public use or contributions.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
+##CreateReactApp
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Table of Contents
+## Create React App Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
