@@ -6,7 +6,7 @@ The app uses React, Google Maps API, and Foursquare API.
 
 ## Table of Contents
 * [Instructions](#instructions)
-* [Dependencies](#dependecies)
+* [Dependencies](#dependencies)
 * [Contributing](#contributing)
 * [Create React App](#create-react-app)
 
