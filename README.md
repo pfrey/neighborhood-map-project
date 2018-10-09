@@ -12,27 +12,26 @@ The app uses React, Google Maps API, and Foursquare API.
 
 ## Instructions
 
-_To run:_
+**_To run:_**
 
 1. Clone or download this repository.
 
 2. Obtain valid API keys:
-- Google Maps API key
-- Foursquare API key
+   - Google Maps API key
+   - Foursquare API key
 
-NOTE:
-If using the keys provided in this project...
--The map will have a watermarked overlay and a Google warning popup on load.
--The infowindow pop-ups may not open if the daily Foursquare API limit has been reached (Error code 429).
+> NOTE: _If using the keys provided in this project..._
+> - The map will have a watermarked overlay and a Google warning popup on load. 
+> - The infowindow pop-ups may not open if the daily Foursquare API limit has been reached (Error code 429).
 
 
-Install all dependencies: 
+3. Install all dependencies: 
 (see also: [Dependecies](#dependecies) section)
   ```sh
   npm install
   ```
 
-Run:
+4. Run:
   ```sh
   npm start
   ```
