@@ -38,8 +38,11 @@ const LoadMap = withScriptjs(
                     : google.maps.Animation.DROP
                 }
               >
+
+
                 {marker.isOpen &&
-                  venueInfo.contact && (
+                  venueInfo.contact &&
+                  venueInfo.hours && (
                     <InfoWindow>
                       <React.Fragment>
                       <div className="infowindow">
@@ -50,16 +53,34 @@ const LoadMap = withScriptjs(
                         <hr />
                         <p>
                           Contact Info:<br/>
-                          <span>Phone: </span>{venueInfo.contact.formattedPhone}<br/>
-                          <span>Facebook: </span><a href={`http://www.facebook.com/${venueInfo.contact.facebookUsername}`} target="_blank">{venueInfo.contact.facebookUsername}</a><br/>
-                          <span>Twitter: </span><a href={`http://www.twitter.com/${venueInfo.contact.twitter}`} target="_blank">{venueInfo.contact.facebookUsername}</a>
+                          <span>Phone: </span> 
+                            {venueInfo.contact.formattedPhone ? ( 
+                              <span className="noformat">{venueInfo.contact.formattedPhone}</span>
+                            ) : ( 
+                              "N/A" 
+                            )}
+                          <br/>
+                          <span>Facebook: </span>
+                            {venueInfo.contact.facebookUsername ? ( 
+                              <a href={`http://www.facebook.com/${venueInfo.contact.facebookUsername}`} target="_blank">{venueInfo.contact.facebookUsername}</a>
+                            ) : ( 
+                              "N/A" 
+                            )}
+                          <br/>
+                          <span>Twitter: </span>
+                            {venueInfo.contact.twitter ? ( 
+                              <a href={`http://www.twitter.com/${venueInfo.contact.twitter}`} target="_blank">{venueInfo.contact.twitter}</a>
+                            ) : ( 
+                              "N/A" 
+                            )}
                         </p>
                         <hr />
-                        <p>{venueInfo.hours.status}</p>
+                        <p>{venueInfo.hours ? ( <span className="noformat">{venueInfo.hours.status}</span> ) : ( "Contact us for hours." )}</p>
                       </div>
                       </React.Fragment>
                     </InfoWindow>
                   )}
+              }
               </Marker>
             );
           })}
