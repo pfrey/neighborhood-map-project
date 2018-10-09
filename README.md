@@ -26,7 +26,7 @@ The app uses React, Google Maps API, and Foursquare API.
 
 
 3. Install all dependencies: 
-(see also: [Dependecies](#dependecies) section)
+(see also: [Dependencies](#dependencies) section)
   ```sh
   npm install
   ```
