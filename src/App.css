@@ -43,6 +43,11 @@
   padding-left: 10px;
 }
 
+#map .infowindow .noformat {
+  font-style: normal;
+  padding-left: 0;
+}
+
 
 #header {
   height: 50px;
@@ -157,5 +162,6 @@ li:hover {
 }
   
 li:focus{
-  background: none;
+  color: #f44295;   
+  background: #303030;
 }
