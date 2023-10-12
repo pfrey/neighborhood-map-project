@@ -4,7 +4,7 @@ Seventh and Final Project of the Udacity Front-End NanoDegree Program.
 The goal of this project was to build a single page map application.
 The app uses React, Google Maps API, and Foursquare API.
 
-![screenshot of map app](/img/map-screenshot.png)
+![screenshot of map app](/src/images/map-screenshot.png)
 
 ## Table of Contents
 * [Instructions](#instructions)
